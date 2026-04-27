@@ -87,14 +87,22 @@ st.markdown(
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 { color: white !important; }
+    section[data-testid="stSidebar"] label { color: #f1f5f9 !important; font-weight: 500; }
 
     /* Buttons */
     .stButton>button {
-        background: linear-gradient(135deg,#6366f1,#8b5cf6);
-        color:white; border:none; padding:.6rem 1.4rem;
-        border-radius:10px; font-weight:600;
+        background: linear-gradient(135deg,#6366f1,#8b5cf6) !important;
+        color: white !important; 
+        border: none !important; 
+        padding: .6rem 1.4rem !important;
+        border-radius: 10px !important; 
+        font-weight: 600 !important;
+        box-shadow: 0 4px 12px rgba(99,102,241,0.3) !important;
     }
-    .stButton>button:hover { filter: brightness(1.08); }
+    .stButton>button:hover { 
+        filter: brightness(1.15) !important;
+        transform: translateY(-2px);
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -172,7 +180,7 @@ with st.sidebar:
         ["Beach", "Mountain", "City", "Adventure", "Romantic"],
     )
     st.divider()
-    st.caption("© 2025 Smart Travel • Built with Streamlit")
+    st.caption("© 2026 Smart Travel Recommendation System")
 
 # ---------------------------------------------------------------------------
 # Hero header
@@ -346,4 +354,12 @@ with v2:
     st.plotly_chart(fig2, use_container_width=True)
 
 st.divider()
-st.caption("✨ Built with ❤️ using Streamlit, Plotly & TextBlob — plug in your own dataset to go live.")
+st.markdown(
+    """
+    <div style='text-align: center; padding: 1rem; color: #64748b;'>
+        <p style='margin: 0; font-size: 0.9rem;'>© 2026 Smart Travel Recommendation System. All Rights Reserved.</p>
+        <p style='margin: 0.3rem 0 0 0; font-size: 0.85rem;'>Built with Streamlit, Plotly & TextBlob</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
